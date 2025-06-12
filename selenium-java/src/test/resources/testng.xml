@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="All Test Suite" parallel="tests" thread-count="2">
+    <parameter name="browser" value="chrome"/>
+    <parameter name="baseUrl" value="https://meusite.com"/>
+
+    <listeners>
+        <listener class-name="section16_testng.ListenersExample" />
+    </listeners>
+
+    <test verbose="2" preserve-order="true"
+          name="Test case">
+        <classes>
+            <class name="section16_testng.Main">
+            </class>
+        </classes>
+    </test>
+</suite>
