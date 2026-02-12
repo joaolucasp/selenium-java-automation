@@ -16,6 +16,9 @@ public class AbstractComponent {
   @FindBy(css="[routerlink*='cart']")
   WebElement cartNavbarButton;
 
+  @FindBy(css="[routerlink*='myorders']")
+  WebElement myOrdersButton;
+
   public AbstractComponent(WebDriver driver) {
     this.driver = driver;
   }
@@ -37,5 +40,9 @@ public class AbstractComponent {
 
   public void goToCartPage() {
     cartNavbarButton.click();
+  }
+
+  public void goToOrdersPage() {
+    myOrdersButton.click();
   }
 }

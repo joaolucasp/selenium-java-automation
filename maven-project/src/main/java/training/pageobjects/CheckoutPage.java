@@ -48,6 +48,6 @@ public class CheckoutPage extends AbstractComponent {
 
   public void checksIfOrderHasBeenConfirmed() {
     String orderConfirmationMessage = orderConfirmationMessageElement.getText();
-    Assert.assertFalse(orderConfirmationMessage.equalsIgnoreCase("Thankyou for the order."));
+    Assert.assertTrue(orderConfirmationMessage.equalsIgnoreCase("Thankyou for the order."));
   }
 }
