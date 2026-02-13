@@ -9,8 +9,6 @@ import training.pageobjects.ProductCatalog;
 import java.io.IOException;
 
 public class AddProductToCartTest extends BaseTest {
-  WebDriver driver;
-
   @Test()
   public void AddProductToCart() throws IOException {
     LandingPage landingPage = new LandingPage(driver);
@@ -21,15 +19,5 @@ public class AddProductToCartTest extends BaseTest {
 
     ProductCatalog productCatalog = new ProductCatalog(driver);
     productCatalog.addProductToCart(productName);
-  }
-
-  @BeforeMethod
-  public void launchBrowser() throws IOException {
-    driver = initializeDriver();
-  }
-
-  @AfterMethod
-  public void quitBrowser() throws IOException {
-    driver.quit();
   }
 }
