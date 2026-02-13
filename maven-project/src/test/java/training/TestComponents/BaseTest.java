@@ -7,6 +7,7 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.edge.EdgeDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
+import org.testng.ITestResult;
 import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeMethod;
 import training.data.DataReader;
@@ -19,7 +20,7 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Properties;
 
-public class BaseTest {
+public abstract class BaseTest {
   public WebDriver driver;
 
   public WebDriver initializeDriver() throws IOException {
@@ -66,7 +67,7 @@ public class BaseTest {
     return dataReader.getJsonDataToHashMap(filePath);
   }
 
-  public String TakeScreenshot(String filename) throws IOException {
+  public String TakeScreenshot(String filename, WebDriver driver) throws IOException {
     TakesScreenshot ts = (TakesScreenshot) driver;
     String filePath = System.getProperty("user.dir") + "\\reports\\" + filename + ".png";
 
