@@ -53,3 +53,7 @@ chromedriver.log
 .env
 *.properties.local
 *.config
+
+# ignore any "reports" directory anywhere
+reports/
+**/reports/

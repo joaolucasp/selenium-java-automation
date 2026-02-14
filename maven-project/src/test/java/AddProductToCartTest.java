@@ -21,6 +21,5 @@ public class AddProductToCartTest extends BaseTest {
 
     ProductCatalog productCatalog = new ProductCatalog(driver);
     productCatalog.addProductToCart(productName);
-    Assert.fail();
   }
 }

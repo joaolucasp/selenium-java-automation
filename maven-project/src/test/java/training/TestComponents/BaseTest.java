@@ -1,10 +1,12 @@
 package training.TestComponents;
 
 import org.apache.commons.io.FileUtils;
+import org.openqa.selenium.Dimension;
 import org.openqa.selenium.OutputType;
 import org.openqa.selenium.TakesScreenshot;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.chrome.ChromeOptions;
 import org.openqa.selenium.edge.EdgeDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
 import org.testng.ITestResult;
@@ -28,11 +30,22 @@ public abstract class BaseTest {
     FileInputStream file = new FileInputStream(System.getProperty("user.dir") + "/src/main/java/training/resources/GlobalData.properties");
     prop.load(file);
 
-    String browserName = prop.getProperty("BROWSER");
+    String browserName = System.getProperty("BROWSER", prop.getProperty("BROWSER"));
+
+    boolean headlessMode = Boolean.parseBoolean(
+        System.getProperty("HEADLESS_MODE", "false")
+    );
 
     switch (browserName) {
       case "chrome":
-        driver = new ChromeDriver();
+        ChromeOptions options = new ChromeOptions();
+
+        if (headlessMode) {
+          options.addArguments("--headless");
+          options.addArguments("--window-size=1920,1080");
+        }
+
+        driver = new ChromeDriver(options);
         break;
 
       case "firefox":
