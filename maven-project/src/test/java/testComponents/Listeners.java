@@ -1,4 +1,4 @@
-package training.TestComponents;
+package testComponents;
 
 import com.aventstack.extentreports.ExtentReports;
 import com.aventstack.extentreports.ExtentTest;
@@ -8,8 +8,6 @@ import org.testng.ITestContext;
 import org.testng.ITestListener;
 import org.testng.ITestResult;
 import training.resources.ExtentReporterNG;
-
-import java.io.IOException;
 
 public class Listeners extends BaseTest implements ITestListener {
   ExtentReports extent = ExtentReporterNG.getReportObject();

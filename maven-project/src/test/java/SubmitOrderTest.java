@@ -1,8 +1,7 @@
-import org.openqa.selenium.WebDriver;
 import org.testng.Assert;
 import org.testng.annotations.DataProvider;
 import org.testng.annotations.Test;
-import training.TestComponents.BaseTest;
+import testComponents.BaseTest;
 import training.pageobjects.*;
 
 import java.io.IOException;
